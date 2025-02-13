@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSuggest | Landing</title>
+    <link rel="stylesheet" href="/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body class="font-poppins bg-primary">
+    <!-- Navbar -->
+    <nav class="bg-primary p-3 px-6 w-full flex justify-between items-center">
+        <!-- Logo -->
+        <a href="http://127.0.0.1:3000/home.html">
+            <img class="object-cover max-w-20 max-h-20" src="/assets/logo-final.png" alt="TripWise Logo">
+        </a>
+
+        <!-- Navigation Links -->
+        <div id="nav-menu" class="hidden md:flex gap-12 text-secondary items-center">
+            <a href="http://127.0.0.1:3000/itinerary.html   " class="font-bold text-lg hover:border-b-2 hover:border-secondary transition py-2">ITINERARY</a>
+            <a href="http://127.0.0.1:3000/smartsuggest.html" class="font-bold text-lg border-b-2 border-secondary transition py-2">SMART SUGGEST</a>
+            <a href="http://127.0.0.1:3000/expenselog.html" class="font-bold text-lg hover:border-b-2 hover:border-secondary transition py-2">EXPENSELOG</a>
+        </div>
+
+        <!-- Login Button -->
+        <div id="login"
+            class="hidden md:flex items-center gap-3 text-white bg-secondary px-4 py-2 rounded-full font-medium text-lg shadow-md transition
+            hover:bg-highlight hover:bg-opacity-75 hover:text-secondary hover:shadow-lg">
+            <i class="fa-regular fa-user"></i>
+            <a href="#" class="hover:underline">Login</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="p-2 md:hidden" onclick="handleMenu()">
+            <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="nav-dialog" class="fixed hidden z-10 bg-white inset-0 p-3">
+            <div class="flex justify-between">
+                <a href="#">
+                    <img class="object-cover max-w-16 max-h-16" src="/assets/logo-final.png" alt="Logo">
+                </a>
+                <button class="p-2" onclick="handleMenu()">
+                    <i class="fa-solid fa-xmark text-gray-600"></i>
+                </button>
+            </div>
+            <div class="mt-6">
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">Itinerary</a>
+                <a href="#" class="font-medium m-3 p-3 bg-gray-100 block rounded-lg">Smart Suggest</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">ExpenseLog</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">Login</a>
+            </div>
+            <div class="h-[1px] bg-gray-300"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex flex-col items-center text-center py-12 px-6 gap-8">
+        <h1 id="smartsuggest-heading" class="text-secondary text-4xl md:text-5xl font-bold max-w-3xl">
+            "It's a Big World Out There, <br> Go and Explore"
+        </h1>
+
+        <button id="smartsuggest-button"
+            class="bg-highlight rounded-3xl px-6 py-3 font-semibold text-primary text-lg shadow-md hover:bg-secondary hover:bg-opacity-50 hover:scale-105 transition">
+            FIND YOUR NEXT DESTINATION
+        </button>
+
+        <p id="smartsuggest-desc" class="text-gray-700 max-w-2xl mx-auto mt-4">
+            Not sure where to go? Let Smart Suggest inspire you with AI-driven recommendations based on your preferences, ensuring a perfect getaway every time.
+        </p>
+    </main>
+
+    <!-- Saved Places Section -->
+    <section class="px-6 py-12">
+        <h2 class="text-xl md:text-2xl font-bold text-secondary text-left mb-6">Saved Places</h2>
+
+        <div id="popular-destination" class="flex flex-wrap  gap-8 md:gap-12">
+            <div class="w-64 h-96 bg-highlight bg-opacity-50 rounded-2xl"></div>
+            <div class="w-64 h-96 bg-highlight bg-opacity-50 rounded-2xl"></div>
+            <!-- <div class="w-64 h-96 bg-highlight bg-opacity-50 rounded-2xl"></div>
+            <div class="w-64 h-96 bg-highlight bg-opacity-50 rounded-2xl"></div> -->
+        </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-10 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-12">
+            
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl font-bold">TripWise</h2>
+                <p class="text-gray-400 mt-2 max-w-sm">
+                    Navigate your perfect trip with ease. Plan, explore, and budget your travels efficiently.
+                </p>
+            </div> 
+            
+            <!-- Quick Links -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-semibold">Quick Links</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Itinerary Planner</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Smart Suggest</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Budget Tracker</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Social Media -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-semibold">Follow Us</h3>
+                <div class="flex justify-center md:justify-start gap-4 mt-2">
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Copyright -->
+        <div class="text-center text-gray-500 text-sm mt-8">
+            &copy; 2025 TripWise. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function handleMenu() {
+            const menu = document.getElementById("nav-dialog");
+            menu.classList.toggle("hidden");
+        }
+    </script>
+    <!-- -->
+</body>
+
+</html>

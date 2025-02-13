@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpxenseLog|TripWise</title>
+    <link rel="stylesheet" href="/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body class=" bg-primary">
+    <!-- Navbar -->
+    <nav class="bg-primary p-3 px-6 w-full flex justify-between items-center">
+        <!-- Logo -->
+        <a href="http://127.0.0.1:3000/home.html">
+            <img class="object-cover max-w-20 max-h-20" src="/assets/logo-final.png" alt="TripWise Logo">
+        </a>
+
+        <!-- Navigation Links -->
+        <div id="nav-menu" class="hidden md:flex gap-12 text-secondary items-center">
+            <a href="http://127.0.0.1:3000/itinerary.html" class="font-bold text-lg hover:border-b-2 hover:border-secondary transition py-2">ITINERARY</a>
+            <a href="http://127.0.0.1:3000/smartsuggest.html" class="font-bold text-lg hover:border-b-2 hover:border-secondary transition py-2">SMART
+                SUGGEST</a>
+            <a href="http://127.0.0.1:3000/expenselog.html" class="font-bold text-lg border-b-2 border-secondary transition py-2">EXPENSELOG</a>
+        </div>
+
+        <!-- Login Button -->
+        <div id="login" class="hidden md:flex items-center gap-3 text-white bg-secondary px-4 py-2 rounded-full font-medium text-lg shadow-md transition
+            hover:bg-highlight hover:bg-opacity-75 hover:text-secondary hover:shadow-lg">
+            <i class="fa-regular fa-user"></i>
+            <a href="#" class="hover:underline">Login</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="p-2 md:hidden" onclick="handleMenu()">
+            <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="nav-dialog" class="fixed hidden z-10 bg-white inset-0 p-3">
+            <div class="flex justify-between">
+                <a href="#">
+                    <img class="object-cover max-w-16 max-h-16" src="/assets/logo-final.png" alt="Logo">
+                </a>
+                <button class="p-2" onclick="handleMenu()">
+                    <i class="fa-solid fa-xmark text-gray-600"></i>
+                </button>
+            </div>
+            <div class="mt-6">
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">Itinerary</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">Smart Suggest</a>
+                <a href="#" class="font-medium m-3 p-3 bg-gray-100 block rounded-lg">ExpenseLog</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">Login</a>
+            </div>
+            <div class="h-[1px] bg-gray-300"></div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-8 bg-secondary opacity-25 ml-8 rounded-3xl max-w-4xl">
+        <h1 class="text-2xl font-bold text-center mb-6 mt-6 p-2 text-primary">Expense Log</h1>
+
+        <div class="bg-[rgba(255, 255, 255, 0.1)] shadow-md rounded-lg p-8 max-w-3xl mx-auto overflow-hidden">
+            <div class="flex flex-col md:flex-row md:flex-wrap items-center justify-between gap-4">
+                
+                <input type="text" placeholder="Expense name" id="expense-name"
+                       class="p-2 border rounded-lg w-full md:flex-1">
+        
+                <input type="number" placeholder="Expense amount" id="expense-amount"
+                       class="p-2 border rounded-lg w-full md:flex-1">
+        
+                <select id="categories" class="p-2 border rounded-lg w-full md:flex-1" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="food">Food</option>
+                    <option value="bills">Bills</option>
+                    <option value="transport">Transport</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="recharge">Recharge</option>
+                    <option value="utilities">Utilities</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="subscription">Subscription</option>
+                </select>
+        
+                <input type="date" class="p-2 border rounded-lg w-full md:flex-1">
+        
+                <button id="add-button" 
+                        class="bg-primary text-secondary border border-transparent hover:border-secondary 
+                               hover:bg-opacity-75 transition-all duration-300 px-4 py-2 rounded-2xl w-full">
+                    Add Expense
+                </button>
+        
+            </div>
+        </div>
+        
+
+        <div class=" bg-highlight opacity-20 rounded-2xl px-8 py-4 mt-6 max-w-3xl mx-auto">
+            <ul class="shadow-md rounded-lg p-4 flex flex-col gap-4">
+                <li class="flex flex-wrap md:flex-nowrap justify-between items-center p-3 border-b rounded-2xl bg-primary ">
+                    <span class="font-semibold">Hotel Bill</span>
+                    <span>₹4500</span>
+                    <span class="text-sm text-secondary">Food</span>
+                    <span class="text-sm text-gray-500">2024-02-01</span>
+                </li>
+                
+                <li class="flex flex-wrap md:flex-nowrap justify-between items-center p-3 border-b rounded-2xl bg-primary ">
+                    <span class="font-semibold">Food Bill</span>
+                    <span>₹1200</span>
+                    <span class="text-sm text-secondary">Utilities</span>
+                    <span class="text-sm text-gray-500">2024-02-02</span>
+                </li>
+        
+                <li class="flex flex-wrap md:flex-nowrap justify-between items-center p-3 border-b rounded-2xl bg-primary ">
+                    <span class="font-semibold">Transport</span>
+                    <span>₹300</span>
+                    <span class="text-sm text-secondary">Commute</span>
+                    <span class="text-sm text-gray-500">2024-02-03</span>
+                </li>
+        
+                <li class="flex flex-wrap md:flex-nowrap justify-between items-center p-3 border-b rounded-2xl bg-primary ">
+                    <span class="font-semibold">Shopping</span>
+                    <span>₹1500</span>
+                    <span class="text-sm text-secondary">Personal</span>
+                    <span class="text-sm text-gray-500">2024-02-04</span>
+                </li>
+        
+                <li class="flex flex-wrap md:flex-nowrap justify-between items-center p-3 border-b rounded-2xl bg-primary gap-x-6">
+                    <span class="font-semibold">Taxi Bill</span>
+                    <span>₹800</span>
+                    <span class="text-sm text-secondary">Movies</span>
+                    <span class="text-sm text-gray-500">2024-02-05</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="mt-6 text-center">
+            <h2 class="text-xl font-bold text-primary">Total: ₹ <span>  8,300.00 </span></h2>
+        </div>
+    </section>
+
+    
+
+</body>
+
+</html>

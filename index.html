@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Project</title>
+    <link rel="stylesheet" href="./output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<!-- npx tailwindcss -i ./style.css -o ./output.css --watch -->
+
+<!-- <body class="bg-slate-900 grid place-content-center h-screen">
+    <h1 class=" text-yellow-400 text-4xl m-6">Test</h1>
+    <div class=" p-6 max-w-sm mx-auto rounded-2xl bg-white shadow-lg flex items-center space-x-4">
+        <div>
+            <img class="h-14 w-14"
+                src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg" alt="">
+        </div>
+        <div>
+            <div class=" text-2xl font-medium text-black">
+                Lorem ipsum
+                <p class="text-slate-500">By Dolor Jain</p>
+            </div>
+        </div>
+    </div>
+
+    <button class=" bg-sky-400 text-center mt-2 text-white text-base p-2 rounded-lg 
+    hover:bg-white hover:text-black w-5">Buy now</button>
+    <div class="text-center my-4">
+         <p class="text-white md:text-blue-600
+        sm:text-green-500">Lorem ipsum dolor sit.</p>
+    </div>
+
+    <div class="mt-3">
+        <div class="max-w-sm mx-auto bg-white rounded-xl md:max-w-xl">
+            <div class=" md:flex">
+                <div>
+                    <img class="h-48 w-full object-cover md:h-full md:w-64 overflow-hidden rounded-xl " src="/assets/pexels-fauxels-3183170.jpg" alt="">
+                </div>
+                <div class=" p-8">
+                    <div class=" uppercase tracking-wider text-sm text-cyan-800 last:font-semibold">
+                    dolor sit amet.</div>
+                    <a class="block mt-1 text-lg font-medium text-black hover:text-blue-900" href="#"> 
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit officia, praesentium assumenda.</a>
+                    <p class=" text-slate-500">Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body> -->
+
+<body class=" bg-slate-900">
+    <nav class="w-full h-16 bg-white flex justify-between px-4 md:px-4 items-center">
+        <div class=" text-2xl text-deepBlue font-bold ">TW Services</div>
+        <ul class="md:flex font-semibold hidden">
+            <li class=" mx-[10px] cursor-pointer">Home</li>
+            <li class=" mx-[10px] cursor-pointer">About Us</li>
+            <li class=" mx-[10px] cursor-pointer">Contact Us</li>
+        </ul>
+        <div class=" hidden md:block px-2 py-2 bg-indigo-700 text-white rounded font-bold cursor-pointer">Login/SignUp
+        </div>
+        <div class=" md:hidden">
+            <a href="#" class=" text-4xl">&#8801;</a>
+        </div>
+    </nav>
+    <!-- nav ends here -->
+    <header class="w-full h-26">
+        <img class=" w-full hidden md:block" src="/assets/pexels-marek-piwnicki-3907296-18899627.jpg" alt="">
+        <img class=" w-full md:hidden" src="/assets/mobile.jpg" alt="">
+    </header>
+    <!-- img ends here -->
+
+    <!-- our traveler section -->
+    <div class="h-auto w-100 flex flex-wrap flex-col items-center text-center p-10">
+        <div class=" w-full h-auto flex flex-wrap flex-col items-center">
+            <p class="text-indigo-800 font-bold text-xl md:text-4xl text-center">"It's A Big World Out There, Go Explore!"</p>
+            <div class=" w-36 h-1 border-b-4 border-yellow-400 mt-2 rounded-2xl md:mt-4 mb-12 ">
+            </div>
+        </div>
+        <div class=" w-full flex flex-wrap justify-evenly">
+            <div class="w-46 flex flex-col items-center mb-12">
+                <img class="w-44 h-44" src="/assets/13517854.png " alt="">
+                <p class="text-3xl font-bold text-white">600+</p>
+                <p class="text-3xl font-bold text-gray-500">Popular Destination</p>
+            </div>
+
+            <div class="w-46 flex flex-col items-center mb-12">
+                <img class="w-44 h-44" src="/assets/13517854.png " alt="">
+                <p class="text-3xl font-bold text-white">600+</p>
+                <p class="text-3xl font-bold text-gray-500">Popular Destination</p>
+            </div>
+
+            <div class="w-46 flex flex-col items-center mb-12">
+                <img class="w-44 h-44" src="/assets/13517854.png " alt="">
+                <p class="text-3xl font-bold text-white">600+</p>
+                <p class="text-3xl font-bold text-gray-500">Popular Destination</p>
+            </div>
+        </div>
+    </div>
+    <!-- section ends here -->
+    <div class=" w-full h-auto flex flex-wrap flex-col items-center">
+        <div class=" w-full h-auto flex flex-wrap flex-col items-center">
+            <p class="text-indigo-800 font-bold text-xl md:text-4xl text-center">Our Service</p>
+            <div class=" w-36 h-1 border-b-4 border-yellow-400 mt-2 rounded-2xl md:mt-4 mb-12 ">
+            </div>
+   
+        </div>
+        <div class="w-[90%] h-auto flex flex-wrap justify-around">
+            <div class="w-64 flex flex-col items-center mb-12 border-white border-2 rounded-xl p-2">
+                <img src="/assets/airplane_2200326.png" alt="">
+                <p class=" text-2xl font-bold text-white"> TW Provides</p>
+                <p class=" text-lg font-bold text-gray-500">Our team has the skills and expertise to deliver high-quality services.</p>
+            </div>
+            <div class="w-64 flex flex-col items-center mb-12  rounded-xl p-2">
+                <img src="/assets/airplane_2200326.png" alt="">
+                <p class=" text-2xl font-bold text-white"> TW Provides</p>
+                <p class=" text-lg font-bold text-gray-500">Our team has the skills and expertise to deliver high-quality services.</p>
+            </div>
+            <div class="w-64 flex flex-col items-center mb-12 rounded-xl p-2">
+                <img src="/assets/airplane_2200326.png" alt="">
+                <p class=" text-2xl font-bold text-white"> TW Provides</p>
+                <p class=" text-lg font-bold text-gray-500">Our team has the skills and expertise to deliver high-quality services.</p>
+            </div>
+            <div class="w-64 flex flex-col items-center mb-12 rounded-xl p-2">
+                <img src="/assets/airplane_2200326.png" alt="">
+                <p class=" text-2xl font-bold text-white"> TW Provides</p>
+                <p class=" text-lg font-bold text-gray-500">Our team has the skills and expertise to deliver high-quality services.</p>
+            </div>
+           
+            
+        </div>
+   </div>
+
+<!-- footer  -->
+<!-- 
+   <footer class="w-full bg-gray-900 px-4 text-white pt-8 flex flex-col md:flex-row flex-wrap justify-between md:px-12">
+    <div>
+        <img src="/assets/" alt="">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <img src="" alt="">
+    </div>
+
+   </footer> -->
+</body>
+
+</html>

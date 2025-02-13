@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>TripWise</title>
+</head>
+
+<body class=" font-poppins bg-primary">
+    <!-- Nav Bar Starts -->
+    <nav class=" bg-primary p-3 h-auto w-full flex justify-between items-center">
+        <a href="http://127.0.0.1:3000/home.html">
+            <img class=" object-cover max-w-20 max-h-20" src="/assets/logo-final.png" alt="">
+            <!-- <h1 class="font-bold  text-2xl hover:border-b-2 hover:border-secondary transition"></h1> -->
+        </a>
+        <div id="nav-menu" class="hidden md:flex gap-12 text-secondary items-center">
+            <a href="http://127.0.0.1:3000/itinerary.html" class="font-bold text-lg  hover:border-b-2 hover:border-secondary transition py-2">ITINERARY</a>
+            <a href="http://127.0.0.1:3000/smartsuggest.html" class="font-bold text-lg  hover:border-b-2 hover:border-secondary transition py-2">SMART
+                SUGGEST</a>
+            <a href="http://127.0.0.1:3000/expenselog.html"
+                class="font-bold text-lg  hover:border-b-2 hover:border-secondary transition py-2">EXPENSELOG</a>
+        </div>
+
+        <div id="login" class="hidden md:flex items-center gap-3 text-white bg-secondary px-4 py-2 rounded-full font-medium text-lg shadow-md transition
+    hover:bg-highlight hover:bg-opacity-75 hover:text-secondary hover:shadow-lg">
+            <i class="fa-regular fa-user"></i>
+            <a href="http://127.0.0.1:3000/Login/index.html" class="hover:underline">Login</a>
+        </div>
+
+        <button class=" p-2 md:hidden" onclick="handleMenu()">
+            <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
+
+        <div id="nav-dialog" class=" fixed hidden z-10 lg:hidden bg-white inset-0 p-3">
+            <div id="nav-bar" class="flex justify-between">
+                <a href="#" id="brand" class="flex gap-2 items-center">
+                    <img class="object-cover max-w-16 max-h-16" src="/assets/logo-final.png" alt="Logo">
+                    <!-- <span class="text-lg font-medium font-mullish">ToDesktop</span> -->
+                </a>
+                <button class="p-2 lg:hidden" onclick="handleMenu()">
+                    <i class="fa-solid fa-xmark text-gray-600"></i>
+                </button>
+            </div>
+            <div class=" mt-6">
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">Itinerary</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">Smart Suggest</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">ExpenseLog</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">About Us</a>
+                <a href="http://127.0.0.1:3000/Login/index.html" class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg">Login</a>
+            </div>
+            <div class="h-[1px] bg-gray-300"></div>
+
+        </div>
+
+    </nav>
+    <!-- Nav Bar Ends -->
+    <!-- main Section Start -->
+
+    <main>
+        <div class="relative w-full md:h-[500px]" id="main-container">
+            <!-- Background Image -->
+            <img src="/assets/bg-ref.png" class="w-full h-full object-cover" alt="">
+
+            <!-- Text Overlay -->
+            <div
+                class="absolute inset-0 flex items-center justify-center text-white text-xl md:text-3xl font-bold tracking-widest text-center px-4 bg-black bg-opacity-30">
+                <p>NAVIGATE YOUR IDEAL TRIP WITH TRIPWISE</p>
+            </div>
+
+            <!-- Buttons (Visible on Desktop) -->
+            <div id="main-buttons"
+                class="hidden md:flex absolute bottom-5 left-1/2 -translate-x-1/2 flex-row gap-9 items-center py-6">
+                <button
+                    class="w-52 px-6 py-3 bg-primary text-secondary font-semibold rounded-3xl shadow-lg hover:bg-secondary hover:opacity-75 hover:text-primary hover:border transition hover:-translate-y-2">ITINERARY</button>
+                <button
+                    class="w-52 px-6 py-3 bg-primary text-secondary font-semibold rounded-3xl shadow-lg hover:bg-secondary hover:opacity-75 hover:text-primary hover:border transition hover:-translate-y-2">SMART
+                    SUGGEST</button>
+                <button
+                    class="w-52 px-6 py-3 bg-primary text-secondary font-semibold rounded-3xl shadow-lg hover:bg-secondary hover:opacity-75 hover:text-primary hover:border transition hover:-translate-y-2">EXPENSELOG</button>
+            </div>
+        </div>
+
+        <!-- Buttons (Visible on Mobile - Below the Image) -->
+        <div class="flex flex-col md:hidden items-center gap-5 py-5">
+            <button
+                class=" w-52 px-6 py-3  bg-secondary opacity-75  text-primary font-semibold rounded-3xl shadow-lg hover:bg-primary hover:opacity-75 hover:text-secondary hover:shadow-lg hover:border-secondary hover:border transition hover:-translate-y-2">ITINERARY</button>
+            <button
+                class="w-52 px-6 py-3 bg-secondary opacity-75 text-primary font-semibold rounded-3xl shadow-lg hover:bg-primary hover:opacity-75 hover:text-secondary hover:border hover:border-secondary transition hover:-translate-y-2">SMART
+                SUGGEST</button>
+            <button
+                class="w-52 px-6 py-3 bg-secondary opacity-75 text-primary font-semibold rounded-3xl shadow-lg hover:bg-primary hover:opacity-75 hover:text-secondary hover:border hover:border-secondary transition hover:-translate-y-2">EXPENSELOG</button>
+        </div>
+
+        <section class="py-16 bg-primary">
+            <!-- Section Heading -->
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary">How TripWise Helps You Travel Smarter</h2>
+                <p class="text-gray-600 mt-2">Making every trip smoother and smarter – plan with ease.</p>
+            </div>
+
+            <section id="features" class="max-w-6xl mx-auto px-6 md:px-10 space-y-16">
+                <!-- Itinerary Section -->
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                    <!-- Image -->
+                    <div class="flex justify-center">
+                        <img src="/assets/map-ref-1.png" class="w-56 h-56" alt="Itinerary">
+                    </div>
+                    <!-- Text -->
+                    <div class="text-center md:text-left">
+                        <span class="uppercase text-2xl px-3 py-1 bg-highlight bg-opacity-30 font-bold">Itinerary</span>
+                        <p class="mt-2 text-lg font-semibold text-gray-800">Create an Itinerary</p>
+                        <p class="mt-1 text-gray-700">
+                            Craft your perfect itinerary with TripWise. Organize your trip day-by-day with ease to
+                            create the optimal travel plan tailored just for you.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Smart Suggest Section (Image on Right for Desktop) -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10">
+                    <!-- Image -->
+                    <div class="flex justify-center">
+                        <img src="/assets/itinerary-ref-1.png" class="w-56 h-56" alt="SmartSuggest">
+                    </div>
+                    <!-- Text -->
+                    <div class="text-center md:text-left">
+                        <span class="uppercase text-2xl px-3 py-1 bg-highlight bg-opacity-30 font-bold">Smart
+                            Suggest</span>
+                        <p class="mt-2 text-lg font-semibold text-gray-800">Place Suggestor</p>
+                        <p class="mt-1 text-gray-700">
+                            Embark on a journey of discovery with our intelligent SmartSuggest.
+                            Whether you're seeking serene beaches, bustling cityscapes, or hidden gems off the beaten
+                            path,
+                            we’ve got you covered.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Expense Log Section -->
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                    <!-- Image -->
+                    <div class="flex justify-center">
+                        <img src="/assets/expenselog-ref-1.png" class="w-56 h-56" alt="Expense Log">
+                    </div>
+                    <!-- Text -->
+                    <div class="text-center md:text-left">
+                        <span class="uppercase text-2xl px-3 py-1 bg-highlight bg-opacity-30 font-bold">Expense
+                            Log</span>
+                        <p class="mt-2 text-lg font-semibold text-gray-800">Budget Tracker</p>
+                        <p class="mt-1 text-gray-700">
+                            Take control of your travel spending with ease. Our Budget Tracker helps you plan, monitor,
+                            and manage your expenses throughout your journey.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <div id="popular-text" class=" text-center">
+                <h1 class="uppercase text-3xl md:text-4xl font-bold text-secondary ">Popular Destinations TO VISIT </h1>
+                <p class=" text-gray-600 mt-4 leading-6 w-max-full">Uncover new horizons with destinations that blend
+                    unique experiences, stunning landscapes, and rich cultures. Whether you're seeking adventure,
+                    relaxation, or cultural exploration, we offer destinations that cater to every traveler’s
+                    preferences.</p>
+            </div>
+            <div id="popular-destination" class="flex flex-wrap justify-center gap-24 p-12">
+                <div class="w-60 h-60 bg-highlight bg-opacity-50 rounded-2xl"></div>
+                <div class="w-60 h-60 bg-highlight bg-opacity-50 rounded-2xl"></div>
+                <div class="w-60 h-60 bg-highlight bg-opacity-50 rounded-2xl"></div>
+                <div class="w-60 h-60 bg-highlight bg-opacity-50 rounded-2xl"></div>
+                <div class="w-60 h-60 bg-highlight bg-opacity-50 rounded-2xl"></div>
+                <div class="w-60 h-60 bg-highlight bg-opacity-50 rounded-2xl"></div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div id="review-container" class="text-left md:text-center px-6 py-12">
+                <h2 class="uppercase text-2xl md:text-4xl font-bold text-secondary">Don't take our word for it</h2>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+                    See what our users have to say about revolutionizing their travel experiences with TripWise.
+                </p>
+
+                <div id="review-box" class="flex flex-wrap justify-center gap-12 md:gap-20 p-12">
+                    <div class="w-48 h-48 bg-highlight bg-opacity-50 rounded-2xl"></div>
+                    <div class="w-48 h-48 bg-highlight bg-opacity-50 rounded-2xl"></div>
+                    <div class="w-48 h-48 bg-highlight bg-opacity-50 rounded-2xl"></div>
+                </div>
+            </div>
+
+            <!-- Description Section -->
+            <div id="desc-container" class="text-left md:text-center px-6 py-12">
+                <h2 class="uppercase text-2xl md:text-4xl font-bold text-secondary">"The only tool you'll ever need to
+                    travel!"</h2>
+
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+                    TripWise—your ultimate travel companion.
+                </p>
+
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+                    From creating seamless itineraries to discovering tailored destinations and managing your budget
+                    effortlessly,
+                    TripWise brings everything you need for hassle-free travel planning under one roof.
+                </p>
+
+                <p class="italic text-gray-500 mt-4 max-w-3xl mx-auto">
+                    "Let us take the guesswork out of travel and help you explore the world, your way."
+                </p>
+            </div>
+
+
+
+            <!-- <div id="desc-container" class=" text-center">
+                <div id="desc-text">
+                    <h1 class="uppercase text-2xl m-4 md:text-4xl font-bold text-secondary ">"The only tool you'll ever
+                        need to travel!
+                    </h1>
+                    <p class=" text-gray-600 mt-4 leading-6 w-max-full">TripWise—your ultimate travel companion.
+                    </p>
+                    <p class=" text-gray-600 mt-4 leading-6 w-max-full"> From creating seamless itinerarieso discovering
+                        tailored destinations and managing your budget effortlessly, TripWise brings everything you need
+                        for hassle-free travel planning under one roof. Designed with intelligent features, TripWise
+                        ensures every journey is as unique and memorable as you are.
+                    </p>
+                    <p class=" text-gray-600 mt-4 leading-6 w-max-full">Let us take the guesswork out of travel and help
+                        you explore the world, your way."</p>
+                </div> -->
+
+        </section>
+
+    </main>
+    <!-- main ends -->
+
+    <!-- footer starts -->
+   <!-- Footer -->
+<footer class="bg-gray-900 text-white py-10 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-12">
+        
+        <div class="text-center md:text-left">
+            <h2 class="text-2xl font-bold">TripWise</h2>
+            <p class="text-gray-400 mt-2 max-w-sm">
+                Navigate your perfect trip with ease. Plan, explore, and budget your travels efficiently.
+            </p>
+        </div> 
+        
+        <!-- Quick Links -->
+        <div class="text-center md:text-left">
+            <h3 class="text-lg font-semibold">Quick Links</h3>
+            <ul class="mt-2 space-y-2">
+                <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white transition">Itinerary Planner</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white transition">Smart Suggest</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white transition">Budget Tracker</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="text-center md:text-left">
+            <h3 class="text-lg font-semibold">Follow Us</h3>
+            <div class="flex justify-center md:justify-start gap-4 mt-2">
+                <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-gray-500 text-sm mt-8">
+        &copy; 2025 TripWise. All Rights Reserved.
+    </div>
+</footer>
+    <!-- </footer> -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
